@@ -1,0 +1,6 @@
+courses
+
+<div ng-hide="courses">error retrieving courses list</div>
+<ol ng-show="courses">
+    <li ng-repeat="course in courses" ng-bind="course.Name"></li>
+</ol>
