@@ -1,13 +1,13 @@
 (function(){
     // Declare app level module which depends on views, and components
-    angular.
-        module('myApp', [
+    angular
+        .module('myApp', [
             'ngRoute',
             'controllers.about',
             'controllers.courses',
             'controllers.home',
-        ]).
-        config([
+        ])
+        .config([
             '$routeProvider',
             function($routeProvider) {
                 $routeProvider.
@@ -29,6 +29,13 @@
                     otherwise({
                         redirectTo: '/not-found'
                     });
+            }
+        ])
+        .config([
+            '$locationProvider',
+            function($locationProvider){
+                $locationProvider.hashPrefix('!');
+                $locationProvider.html5Mode(true);
             }
         ]);
 })();

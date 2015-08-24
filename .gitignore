@@ -5,3 +5,4 @@ components/
 tmp
 .DS_Store
 .idea
+dist/
