@@ -1,9 +1,17 @@
 # colernio-frontend
-
 Angular application
 
 ### Dependencies
 
-### Start application
+- [Node.js](http://nodejs.org/)
+- [Grunt](http://gruntjs.com/) 
 
-```npm start```
+### Building and starting application
+
+- Minify CSS & JS
+
+      ```$ grunt build```
+
+- Start server
+
+      ```$ grunt init```
