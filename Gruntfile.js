@@ -22,8 +22,7 @@ module.exports = function ( grunt ) {
             },
             local: {
                 options:{
-                    keepalive:  true,
-                    open:       true
+                    keepalive:  true
                 }
             }
         },
