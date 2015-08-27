@@ -20,7 +20,7 @@ module.exports = function ( grunt ) {
                     return middlewares;
                 }
             },
-            dev: {
+            local: {
                 options:{
                     keepalive:  true,
                     open:       true
@@ -28,7 +28,7 @@ module.exports = function ( grunt ) {
             }
         },
         uglify: {
-            dev: {
+            colernio: {
                 files: {
                     'dist/js/app.min.js': [
                         'app/js/app.js',
@@ -38,7 +38,7 @@ module.exports = function ( grunt ) {
             }
         },
         cssmin: {
-            dev: {
+            colernio: {
                 files: {
                     'dist/css/app.min.css': [
                         'app/css/app.css',
@@ -48,6 +48,6 @@ module.exports = function ( grunt ) {
         }
     });
 
-    grunt.registerTask('init', ['build', 'connect:dev']);
-    grunt.registerTask('build', ['uglify:dev','cssmin:dev']);
+    grunt.registerTask('local', ['build', 'connect:local']);
+    grunt.registerTask('build', ['uglify','cssmin']);
 }
