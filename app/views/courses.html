@@ -1,6 +1,38 @@
-courses
 
-<div ng-hide="courses">error retrieving courses list</div>
-<ol ng-show="courses">
-    <li ng-repeat="course in courses" ng-bind="course.Name"></li>
-</ol>
+<div ng-show="courses" class="col-sm-12">
+    <nav class="navbar navbar-default">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <p class="navbar-text">Filters</p>
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">by category <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Kitchen</a></li>
+                        <li><a href="#">Garden</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div ng-show="courses" ng-repeat="course in courses" class="col-sm-3">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">{{course.Name}}</h3>
+        </div>
+        <div class="panel-body">
+            text
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-danger" ng-hide="courses">
+    <div class="panel-heading">
+        <h3 class="panel-title">Error</h3>
+    </div>
+    <div class="panel-body">
+        <p>Could not retrieve courses list</p>
+        <p><a href="#" ng-click="ping()">Ping connection</a></p>
+    </div>
+</div>

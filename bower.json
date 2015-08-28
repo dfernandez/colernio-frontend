@@ -6,10 +6,12 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "angular": "~1.4.0",
-    "angular-route": "~1.4.0",
-    "angular-loader": "~1.4.0",
-    "angular-mocks": "~1.4.0",
-    "html5-boilerplate": "~5.2.0"
+    "angular": "~1.4.4",
+    "angular-route": "~1.4.4",
+    "angular-loader": "~1.4.4",
+    "angular-mocks": "~1.4.4",
+    "angular-toastr": "~1.4.1",
+    "html5-boilerplate": "~5.2.0",
+    "ng-websocket": "~0.2.1"
   }
 }

@@ -3,6 +3,8 @@
     angular
         .module('myApp', [
             'ngRoute',
+            'ngWebsocket',
+            'toastr',
             'controllers.about',
             'controllers.courses',
             'controllers.home',
