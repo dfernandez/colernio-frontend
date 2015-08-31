@@ -9,6 +9,11 @@
             'toastr',
             function ($scope, $http, $websocket, toastr) {
 
+                $http.get('http://localhost:8080').
+                    then(function(response){
+                        $scope.courses = response.data;
+                    });
+
                 var ws = $websocket.$new({
                     'url':'ws://localhost:8080/ws'
                 });
