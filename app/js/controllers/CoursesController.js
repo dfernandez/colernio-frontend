@@ -10,21 +10,15 @@
             function ($scope, $http, $websocket, toastr) {
 
                 var ws = $websocket.$new({
-                    'url':'ws://localhost:8080',
-                    'reconnect': true,
-                    'reconnectInterval':100
+                    'url':'ws://localhost:8080/ws'
                 });
 
-                ws.$on('pong', function(message) {
-                    console.log('pong: ' + message);
-                });
-
-                ws.$on('reload', function() {
-                    toastr.info('Reload required')
-                });
-
-                ws.$on('$close', function(){
-                    console.log('close connection');
+                ws.$on('$message', function(message) {
+                    if (message.event == "num_clients") {
+                        $('#connected_clients').html(message.data)
+                    } else {
+                        console.log(message)
+                    }
                 });
 
 
