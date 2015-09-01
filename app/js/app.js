@@ -8,6 +8,8 @@
             'controllers.about',
             'controllers.courses',
             'controllers.home',
+            'factories.api',
+            'factories.websocket'
         ])
         .config([
             '$routeProvider',

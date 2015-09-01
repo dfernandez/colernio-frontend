@@ -4,28 +4,15 @@
         .module('controllers.courses', [])
         .controller('CoursesCtrl', [
             '$scope',
-            '$http',
-            '$websocket',
-            'toastr',
-            function ($scope, $http, $websocket, toastr) {
+            'api',
+            'ws',
+            function ($scope, api, ws) {
 
-                $http.get('http://localhost:8080').
-                    then(function(response){
-                        $scope.courses = response.data;
-                    });
-
-                var ws = $websocket.$new({
-                    'url':'ws://localhost:8080/ws'
-                });
-
-                ws.$on('$message', function(message) {
-                    if (message.event == "num_clients") {
-                        $('#connected_clients').html(message.data)
-                    } else {
-                        console.log(message)
+                api.courses.then(
+                    function(response){
+                        $scope.courses = response
                     }
-                });
-
+                );
 
                 // Ping action
                 $scope.ping = function(){
