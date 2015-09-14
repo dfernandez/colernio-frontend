@@ -5,11 +5,16 @@
             'ngRoute',
             'ngWebsocket',
             'toastr',
+
             'controllers.about',
             'controllers.courses',
+            'controllers.login',
+            'controllers.oauth',
             'controllers.home',
+            'controllers.profile',
+
             'factories.api',
-            'factories.websocket'
+            'factories.websocket',
         ])
         .config([
             '$routeProvider',
@@ -27,11 +32,17 @@
                         controller:     'CoursesCtrl',
                         templateUrl:    'app/views/courses.html'
                     }).
-                    when('/not-found', {
-                        templateUrl:    'app/views/not-found.html'
+                    when('/login', {
+                        controller:     'LoginCtrl',
+                        templateUrl:    'app/views/login.html'
                     }).
-                    otherwise({
-                        redirectTo: '/not-found'
+                    when('/profile', {
+                        controller:     'ProfileCtrl',
+                        templateUrl:    'app/views/profile.html'
+                    }).
+                    when('/oauth2callback', {
+                        controller:     'OAuthCtrl',
+                        template:       ' '
                     });
             }
         ])
